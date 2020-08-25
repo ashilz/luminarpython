@@ -1,0 +1,44 @@
+import datetime
+
+
+class Person:
+    def setValues(self, pname, age):
+        self.age = age
+        self.pname = pname
+
+    def printValues(self):
+        print(self.pname)
+        print(self.age)
+
+
+class Bank(Person):
+    bname = "SBK"
+
+    def __init__(self, accno, pname):
+        self.accno = accno
+        self.personame = pname
+        self.balance = 3000
+        self.bname = "SBK"
+
+    def deposit(self, amount):
+
+        self.balance += amount
+        print("Remaining balance is: ", self.accno)
+
+    def withdraw(self, amount):
+        self.amount = amount
+        if (self.balance < amount):
+            print("Insufficent balance: ")
+        else:
+            print("Remaining balance: ", self.balance)
+
+    def BalanceEnquiry(self):
+
+        print("Your currnent available balance", self.balance)
+
+
+obj = Bank(10001, "Ashil")
+obj.deposit(5000)
+obj.balanceEnquiry()
+obj.printValues()
+obj.setValues("ajay", 25)
